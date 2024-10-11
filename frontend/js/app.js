@@ -7,7 +7,7 @@ window.onload = function() {
         let token = formData.get('token');
 
         try {
-            const response = await fetch('http://127.0.0.1:8000/user', {
+            const response = await fetch('http://127.0.0.1:8000/api/user', { //pielikts pareizs link
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`,
@@ -36,7 +36,7 @@ window.onload = function() {
         let token = formData.get('token');
 
         try {
-            const response = await fetch('http://127.0.0.1:8000/posts', {
+            const response = await fetch('http://127.0.0.1:8000/api/posts', { //pievient api uz link varbut?
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${token}`,
@@ -44,7 +44,7 @@ window.onload = function() {
                 },
                 body: JSON.stringify({
                     title: formData.get('title'),
-                    body: formData.get('title')
+                    body: formData.get('body') //change to body
                 })
             });
 
@@ -66,7 +66,7 @@ window.onload = function() {
 
     async function fetchAllPosts(token) {
         try {
-            const response = await fetch('http://127.0.0.1:8000/posts', {
+            const response = await fetch('http://127.0.0.1:8000/api/posts', { //link posts uz api/posts varbut?
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${token}`,

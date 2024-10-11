@@ -10,6 +10,7 @@ Route::get('/userdata', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::apiResource('posts', PostController::class);
+Route::apiResource('users', AuthController::class);
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
